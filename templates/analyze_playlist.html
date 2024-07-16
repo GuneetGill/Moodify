@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/analyze_playlist.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mood_styles.css') }}">
+    
+    <title>Playlist Analysis</title>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>  
+    <script src="{{ url_for('static', filename='js/mood_handler.js') }}"></script>
+
+</head>
+<body data-mood="{{ final_mood|lower|replace(' ', '-') }}">
+
+    <nav>
+        <div class="nav-left">
+            <span class="nav-text">
+                Moodify<span class="nav-text-beta">{beta}</span>
+            </span>
+        </div>
+        <div class="nav-right">
+            <a href="{{ url_for('main.recently_played') }}" class="home">Home</a>
+            <a href="{{ url_for('main.logout') }}" class="logout">Logout</a>
+        </div>
+    </nav>
+
+    <header>
+        <h3>The mood of your playlist:</h3>
+        <h1>{{ final_mood }}</h1>
+    </header>
+
+    {% if cover_art_urls and tracks_info %}
+    <div class="cover-art-container">
+
+
+        {% if tracks_info|length == cover_art_urls|length %}
+            {% for i in range(tracks_info|length) %}
+                {% set track_parts = tracks_info[i].split('  ') %}
+                {% set track_name = track_parts[0].replace('track name: ', '') %}
+                {% set artist = track_parts[1].replace('artist: ', '') %}
+                {% set album = track_parts[2].replace('album: ', '') %}
+                
+                <div class="track-item">
+                    <img src="{{ cover_art_urls[i].url }}" alt="Cover Art">
+                    <div class="track-info">
+                        <p class="track_name">{{ track_name }}</p>
+                        <p class="artist">{{ artist }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %} 
+        <!-- if for whatever reason the song list and cover art list are two different lengths -->
+            {% for track in tracks_info %}
+                {% set track_parts = track.split('  ') %}
+                {% set track_name = track_parts[0].replace('track name: ', '') %}
+                {% set artist = track_parts[1].replace('artist: ', '') %}
+                {% set album = track_parts[2].replace('album: ', '') %}
+
+                <div class="track-item">
+                    <div class="track-info">
+                        <p class="track_name">{{ track_name }}</p>
+                        <p class="artist">{{ artist }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {% for cover_art in cover_art_urls %}
+                <div class="track-item">
+                    <img src="{{ cover_art.url }}" alt="Cover Art">
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+    </div>
+{% endif %}
+
+<div class="footer">
+    <p class ="next-page">Go back and analyze your other spotify playlists</p>
+    <button class="analyze-button" onclick="window.location.href='{{ url_for('main.get_playlists') }}'">Analyze Your Playlists</button>
+</div>
+
+</body>
+</html>
+
+
+
+
+

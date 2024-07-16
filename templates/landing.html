@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/landing.css') }}">
+    <title>Moodify</title>
+</head>
+<body>
+    <nav>
+        <span class="nav-text">
+            Moodify<span class="nav-text-beta">{beta}</span>
+        </span>
+    </nav>
+    <div class="container">
+
+        <header>
+            <div class = "typewriter"><h1 class = "text">Welcome to Moodify</h1></div>
+            <p>A mood detection app that predicts mood based on your recently listened to music. Discover your mood with Moodify</p>
+        </header>
+
+        <main>
+            <a href="{{ url_for('main.authenticate') }}">Login with Spotify</a>
+        </main>
+    </div>
+</body>
+</html> 

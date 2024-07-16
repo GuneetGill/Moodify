@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    font-family: "Courier Prime", monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-image: url('../images/background.jpg'); 
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Change body font to a more readable sans-serif font */
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between; /* Positions the items at opposite ends */
+    align-items: center; /* Vertically centers items within the nav */
+    padding: 10px 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between Home and Logout */
+}
+
+.nav-text {
+    font-size: 1.5rem;
+}
+
+.nav-text-beta {
+    color: black;
+    font-size: 0.5em; 
+}
+
+.home, .logout {
+    cursor: pointer;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+.home:hover, .logout:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-family: "Courier Prime", monospace;
+    font-size: 2.5em;
+    margin-top: 20px;
+    padding: 25px;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.smaller-text {
+    font-size: 0.9em;
+}
+
+.playlists-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    font-size: 13px;
+}
+
+.playlists-container a {
+    color: black; 
+    text-decoration: none;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+}
+
+.playlists-container a:hover {
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+}
+
+.playlists-container a::before {
+    content: "\f001"; /* Font Awesome music note icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    font-size: 1em;
+    margin-right: 10px;
+    color: black; /* Set icon color to black */
+}
+
+/* loading styling */
+.loading-spinner {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid black;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/get_playlists.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>  
+    <title>Your Playlists</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <span class="nav-text">
+                Moodify<span class="nav-text-beta">{beta}</span>
+            </span>
+        </div>
+        <div class="nav-right">
+            <a href="{{ url_for('main.recently_played') }}" class="home">Home</a>
+            <a href="{{ url_for('main.logout') }}" class="logout">Logout</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <header>
+            <h1>Your Playlists</h1>
+            <p>Analyze your playlist mood</p>
+            <p class="smaller-text">Select a playlist and we'll analyze it to give you an understanding of the mood of your playlist:</p>
+        </header>
+        <div class="playlists-container">
+            {{ playlists_html | safe }}
+        </div>
+
+        <div class="overlay" id="overlay">
+            <div class="loading-spinner" id="loading-spinner"></div>
+        </div>
+
+        <main>
+        </main>
+    </div>
+</body>
+</html>

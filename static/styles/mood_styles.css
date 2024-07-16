@@ -1,0 +1,64 @@
+/* Base styles for body */
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease;
+    height: auto;
+}
+
+/* Mood-specific background images */
+.mood-happy {
+    background-image: url('../images/happy.jpg');
+}
+
+.mood-sad {
+    background-image: url('../images/sad.jpg');
+}
+
+.mood-angry {
+    background-image: url('../images/angry.jpg');
+}
+
+.mood-melancholic {
+    background-image: url('../images/melancholic.jpg');
+}
+
+.mood-calm {
+    background-image: url('../images/calm.jpg');
+}
+
+.mood-peaceful {
+    background-image: url('../images/peaceful.jpg');
+}
+
+.mood-on-top-of-the-world {
+    background-image: url('../images/on_top_of_the_world.jpg');
+}
+
+.mood-electric {
+    background-image: url('../images/electric.jpg');
+}
+
+.mood-euphoric {
+    background-image: url('../images/euphoric.jpg');
+}
+
+.mood-joyful {
+    background-image: url('../images/joyful.jpg');
+}
+
+.mood-relaxed {
+    background-image: url('../images/relaxed.jpg');
+}
+
+.mood-intense {
+    background-image: url('../images/intense.jpg');
+}
+
+.mood-neutral {
+    background-image: url('../images/neutral.jpg');
+}
+

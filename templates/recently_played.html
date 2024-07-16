@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/recently_played.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mood_styles.css') }}">
+
+    <title>Mood Analysis</title>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>  
+    <script src="{{ url_for('static', filename='js/mood_handler.js') }}"></script>
+    
+</head>
+<body data-mood="{{ final_mood|lower|replace(' ', '-') }}">
+    <nav>
+        <div class="nav-left">
+            <span class="nav-text">
+                Moodify<span class="nav-text-beta">{beta}</span>
+            </span>
+        </div>
+        <div class="nav-right">
+            <a href="{{ url_for('main.logout') }}" class="logout">Logout</a>
+        </div>
+    </nav>
+
+
+    <h1> You're feeling {{final_mood}}</h1>
+    <p> Based on your recently listened to songs</p>
+    
+    <div class="cover-art-wrapper">
+        <h4>Songs you've been loving</h4>
+
+        {% if cover_art_urls and song_info %}
+        <div class="cover-art-container">
+        
+        {% for i in range(song_info|length) %}
+            <div class="track-item">
+                <img src="{{ cover_art_urls[i] }}" alt="Cover Art">
+                <div class="track-info">
+                    <p class="track_name">{{ song_info[i][0] }}</p>
+                    <p class="artist">{{ song_info[i][1] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+<div class="footer">
+    <p class ="next-page">Take a deeper look into your spotify playlists. Click on the button below to learn more</p>
+    <button class="analyze-button" onclick="window.location.href='{{ url_for('main.get_playlists') }}'">Analyze Your Playlists</button>
+</div>
+</body>
+</html>

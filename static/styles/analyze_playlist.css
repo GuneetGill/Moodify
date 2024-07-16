@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    font-family: "Courier Prime", monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between; /* Positions the items at opposite ends */
+    align-items: center; /* Vertically centers items within the nav */
+    padding: 10px 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between Home and Logout */
+}
+
+.nav-text {
+    font-size: 1.5rem;
+}
+
+.nav-text-beta {
+    color: black;
+    font-size: 0.5em; 
+}
+
+.home, .logout {
+    cursor: pointer;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+.home:hover, .logout:hover {
+    text-decoration: underline;
+}
+
+
+header {
+    margin-top: 60px;
+}
+
+h1 {
+    padding: 20px;
+    font-size: 40px;
+}
+
+
+p {
+    font-size: 15px;
+}
+
+/* grid of track items */
+.cover-art-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 40px;
+}
+
+.track-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.track-item:hover {
+    transform: scale(1.1);
+}
+
+.track-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.track_name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.artist {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+}
+
+
+/* Footer content positioning */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically within the footer */
+    padding: 50px;
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.next-page {
+    font-size: 1em; /* Adjust font size as needed */
+    margin-top: 10px 0;
+}
+
+.analyze-button {
+    text-decoration: none;
+    color: black;  /*button font color */
+    padding: 10px 20px;
+    border-radius: 0px;
+    border: 2px solid black; /* Black outline */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    font-size: 1em;
+    margin-top: 10px; /* Add some space above the link */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.analyze-button:hover {
+    background-color: grey;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+

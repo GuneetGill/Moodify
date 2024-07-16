@@ -1,0 +1,144 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+*{
+    font-family: "Courier Prime", monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    background-image: url('../images/background.jpg'); 
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Navigation Bar */
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+}
+
+.nav-text {
+    font-size: 1.4em;
+    color: black; /* Adjust text color as needed */
+}
+
+.nav-text-beta {
+    font-size: 0.5em; /* Smaller font size for "beta" */
+    color: black; /* Same color as "moodify" */
+    margin-left: 5px; /* Space between "moodify" and "beta" */
+}
+
+header {
+    color: black; /* Adjust text color as needed */
+    margin-bottom: 30px; /* Add some space between header and main content */
+}
+
+header h1 {
+    font-size: 4em;
+    margin-bottom: 5px; /* Larger font size for "Moodify" */
+}
+
+
+header p {
+    font-size: 1.3em; /* Smaller font size for "Your playlist speaks volumes: Discover your mood with Moodify" */
+    max-width: 800px; /* Limit the width of the paragraph */
+    margin: 0 auto; /* Center the paragraph */
+}
+
+.typewriter{
+    display: inline-block;
+}
+
+.text{
+    border-right: 3px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 3s steps(18),
+        cursor .4s step-end infinite alternate,
+        disappear 0.75s step-end 1 forwards 5s;
+}
+
+/* Typewriter effect */
+@keyframes cursor{
+    50%{border-color: transparent;}
+}
+
+@keyframes typing{
+    from {width: 0;}
+}
+
+@keyframes disappear {
+    from { border-color: black; }
+    to { border-color: transparent; }
+} 
+
+
+/* login with spotify button */
+a {
+    text-decoration: none;
+    color: black;  /*button font color */
+    padding: 10px 20px;
+    border-radius: 0px;
+    border: 2px solid black; /* Black outline */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    font-size: 1.2em;
+    margin-top: 20px; /* Add some space above the link */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+a:hover {
+    background-color: #17a44a; /* Darker shade of Spotify green for hover effect */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Larger shadow on hover */
+}
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 800px) {
+    .nav-text {
+        font-size: 1.2em; /* Smaller font size for mobile */
+    }
+
+    .nav-text-beta {
+        font-size: 0.7em; /* Adjust font size for mobile */
+    }
+
+    header h1 {
+        font-size: 2em; /* Smaller font size for mobile */
+    }
+
+    header p {
+        font-size: 1em; /* Smaller font size for mobile */
+    }
+
+    a {
+        font-size: 1em; /* Adjust font size for mobile */
+        padding: 10px 20px; /* Adjust padding for mobile screens */
+    }
+}
+
+  
+
