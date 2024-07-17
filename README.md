@@ -17,8 +17,10 @@ Moodify is a web application that predicts your mood based on your recently list
 - **React:** For building the user interface.
 - **HTML, CSS, JavaScript:** For front-end development.
 - **Python:** For backend data processing.
-  
+
+## **Demo**
 ![ScreenRecording2024-07-16at10 33 39PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/c31d281a-43cb-431a-bfea-72fa1c66959b)
+![ScreenRecording2024-07-16at11 10 24PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/ed256715-098f-4780-ad30-85da1265fe49)
 ![Untitled-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/dd68f43c-7d09-4741-8837-7f448dea27bc)
 ![Untitled-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/b93b5a93-d4f1-41c3-8bf7-1c9388e60d88)
 
