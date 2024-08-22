@@ -8,13 +8,13 @@ Moodify is a web application that predicts your mood based on your recently list
 - **Playlist Analysis:** Provides mood suggestions for entire playlists.
 - **Secure Authentication:** Uses OAuth 2.0 for secure user authentication with Spotify.
 - **Responsive Design:** Ensures the application is accessible and visually appealing on all devices.
-- **Modern UI:** Built with React, HTML, CSS, and JavaScript for a dynamic and interactive user experience.
+- **Modern UI:** Built with Flask, HTML, CSS, and JavaScript for a dynamic and interactive user experience.
 
 ## **Technologies Used**
 - **Spotify API:** For accessing user listening data.
 - **Spotipy Library:** For interacting with the Spotify API in Python.
 - **OAuth 2.0:** For secure user authentication.
-- **React:** For building the user interface.
+- **Flask:** For backend web framework and routing
 - **HTML, CSS, JavaScript:** For front-end development.
 - **Python:** For backend data processing.
 
